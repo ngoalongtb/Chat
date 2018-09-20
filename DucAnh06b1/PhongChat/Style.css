@@ -1,0 +1,23 @@
+﻿body { font-family:Tahoma; margin:0; padding:0; font-size:12px;}
+
+a { text-decoration:none; color:#000;}
+
+a:hover { text-decoration:underline;}
+
+#Content { width:1000px; margin:0px auto;}
+    
+#Header { height:70px; line-height:70px; font-size:28px; font-weight:bold; color:#FF0000; }
+
+#Menu { height: 30px; line-height: 30px; background: #FF9900;}
+
+#Menu ul { margin:0; padding:0; list-style:none; font-weight:bold; font-size:13px;}
+
+#Menu ul li { float:left; padding:0px 20px 0px 10px;}
+
+#Menu ul li a { color:#FFF;}
+
+#Center { margin:20px 0px 0px 0px;}
+
+#Center h1 { font-size:15px; margin:0px 0px 10px 0px;}
+
+.SubMenu { height:30px; line-height:30px; text-align:right; background:#EAEAEA}
