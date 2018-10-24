@@ -5,13 +5,17 @@ using System.Configuration;
 
 public class SQLQuery
 {
-    private SqlConnection _sqlConn;
+    private static SqlConnection _sqlConn;
     private SqlCommand _sqlCmd;
 
     public SQLQuery()
     {
-        _sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["connStr"].ConnectionString);
-        _sqlConn.Open();
+        if (_sqlConn == null)
+        {
+            _sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["connStr"].ConnectionString);
+            _sqlConn.Open();
+        }
+        
         _sqlCmd = new SqlCommand();
         _sqlCmd.Connection = _sqlConn;
     }
