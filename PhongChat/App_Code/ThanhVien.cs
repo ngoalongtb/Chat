@@ -79,8 +79,35 @@ public class NguoiDung
         return dtbl;
     }
 
+    public DataTable DanhSachChat(int currentUserId)
+    {
+        DataTable dtbl = sql.GetDataTable("select * from tblnguoidung order by TaiKhoanNguoiDung asc");
+
+        DataTable result = new DataTable();
+        result.Columns.Add("MaNguoiDung1");
+        result.Columns.Add("MaNguoiDung2");
+        result.Columns.Add("TenNguoiDung");
+        foreach (DataRow dr in dtbl.Rows)
+        {
+            int userId = (int)dr["MaNguoiDung"];
+            if(userId != currentUserId)
+            {
+                string tenNguoiDung = (string)dr["TaiKhoanNguoiDung"];
+                ChatModel o = new ChatModel(currentUserId, userId, tenNguoiDung);
+                result.Rows.Add(new object[] { o.MaNguoiDung1, o.MaNguoiDung2, o.TenNguoiDung });
+            }
+        }
+
+
+        return result;
+    }
+
     public DataRow ChiTietNguoiDung()
     {
         return sql.GetDataRow("select * from tblnguoidung where MaNguoiDung = " + this.MaNguoiDung);
+    }
+    public DataRow ChiTietNguoiDung(int maNguoiDung)
+    {
+        return sql.GetDataRow("select * from tblnguoidung where MaNguoiDung = " + maNguoiDung);
     }
 }

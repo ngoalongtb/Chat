@@ -53,6 +53,12 @@ public partial class _Default : System.Web.UI.Page
             case "Chat":
                 phCenter.Controls.Add(Page.LoadControl("~/Control/Chat.ascx"));
                 break;
+            case "DanhSachChatCaNhan":
+                phCenter.Controls.Add(Page.LoadControl("~/Control/DanhSachChatCaNhan.ascx"));
+                break;
+            case "ChatCaNhan":
+                phCenter.Controls.Add(Page.LoadControl("~/Control/ChatCaNhan.ascx"));
+                break;
             case "DangXuat":
                 Session.Abandon();
                 Response.Redirect("Default.aspx");
@@ -67,7 +73,7 @@ public partial class _Default : System.Web.UI.Page
             mnudangky.Visible = false;
             mnudangnhap.Visible = false;
             mnutaochude.Visible = true;
-            
+            mnuChatCaNhan.Visible = true;
 
             SubMenu.Visible = true;
             litName.Text = "<b>" + Session["TaiKhoanNguoiDung"].ToString() + "</b>";

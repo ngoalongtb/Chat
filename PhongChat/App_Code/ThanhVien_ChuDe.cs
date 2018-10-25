@@ -43,6 +43,10 @@ public class ThanhVien_ChuDe
     {
         return this.sql.GetDataTable("select distinct(taikhoannguoidung) from tblnguoidung_tblchude a, tblnguoidung b where a.manguoidung = b.manguoidung and a.machude = " + MaChuDe);
     }
+    public DataTable DanhSachChatCaNhan(int maNguoiDung1, int maNguoiDung2)
+    {
+        return this.sql.GetDataTable(string.Format("select distinct(taikhoannguoidung) from tblnguoidung where a.manguoidung IN ( {0}, {1} )",maNguoiDung1,maNguoiDung2));
+    }
 
     public int LayMaNguoiDung()
     {

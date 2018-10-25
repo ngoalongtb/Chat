@@ -16,6 +16,7 @@
         <div id="Menu">
             <ul>
                 <li><a href="Default.aspx?Function=ChuDe">Các Chủ Đề</a></li>
+                <li id="mnuChatCaNhan" runat="server" visible="false"><a href="Default.aspx?Function=DanhSachChatCaNhan">Chat cá nhân</a></li>
                 <li><a href="Default.aspx?Function=TaoChuDe" id="mnutaochude" runat="server" visible="false">Tạo Chủ Đề</a></li>
                 <li><a href="Default.aspx?Function=Search">Tìm kiếm Chủ Đề</a></li>
                 <li id="mnudangnhap" runat="server"><a href="Default.aspx?Function=DangNhap">Đăng nhập</a></li>
